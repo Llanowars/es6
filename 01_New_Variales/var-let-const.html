@@ -4,20 +4,30 @@
   <meta charset="UTF-8">
   <title>let and const</title>
 </head>
-<body>
-<script>
-  function setWidth() {
-    var width = 100;
-    console.log(width);
-  }
-  setWidth();
-  var age = 100;
-  if(age > 12) {
-    const dogYears = age * 7;
-    console.log(`You are ${dogYears} dog years old!`);
-  }
-  let height = 200;
-  const key = 'abc123';
-</script>
-</body>
+  <body>
+    <script>
+
+      function DogAge(age) {
+        var myage = age * 7;
+        console.log(myage);    
+      }
+      DogAge(30);
+      // console.log(myage);
+      
+      // var variables are function scoped
+      // They are only avaiable inside the function where they are created
+      // If they are not in a function they are globaly scoped and avaiable inside all the window
+
+      var age = 12
+      console.log(age);
+      if (age > 6) {
+        let dogYears = age * 7;
+        console.log(`You are ${dogYears} old`);
+      }
+      // Let & Const are scoped to the block
+      // The variable won't leak outside
+      
+
+    </script>
+  </body>
 </html>
