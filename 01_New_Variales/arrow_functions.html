@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>let and const</title>
+</head>
+  <body>
+    <script>
+      
+    const names = ['Llano', 'Allo', 'Nallo']
+
+     // Oldway
+    const fullNames = names.map(function(name) {
+      return `${name} wars`
+    });
+    
+    // FatArrow
+    const fullNames2 = names.map((name) => {
+      return `${name} wars`
+    });
+
+    // 1 param doesn't need ()
+    const fullNames3 = names.map(name => {
+      return `${name} wars`
+    });
+
+    // Explicit return and delete the gates {}
+    const fullNames4 = names.map(name => `${name} wars`);
+
+    // named function
+    function SayMyName(name){
+      return `Hello ${name}`
+    };
+
+    const SayMyName2 = (name) => { alert(`Hello ${name}`)};
+
+
+    console.log(SayMyName2('Julien'));
+
+    </script>
+  </body>
+</html>
