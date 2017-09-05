@@ -1,1 +1,1 @@
-## Discovering ES6 with Wes Bos
+## Discovering ES6
