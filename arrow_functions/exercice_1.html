@@ -35,18 +35,26 @@
   const listItems = Array.from(document.querySelectorAll("li"));
 
   // Filter for only the elements that contain the word 'Flexbox'
-  const filteredArray = listItems.filter(element => {
-    return element.innerHTML.includes("Flexbox");
-  });
-
   // map down to a list of time strings
-  const results = filteredArray.map(element => {
-    return element.attributes["data-time"].value;
-  });
-
   // map to an array of seconds
+  const filteredArray = listItems
+    .filter(element => element.innerHTML.includes("Flexbox"))
+    .map(element => element.attributes["data-time"].value)
+    .map(element => {
+      let counter = 0;
+      const array = element.split(":");
+      counter += parseInt(array[0], 10) * 60;
+      counter += parseInt(array[1], 10);
+      console.log(counter);
+      return counter;
+  });
 
   // reduce to get total
+  const time = filteredArray.reduce((a, b) => a + b);
+  const minutes = Math.floor(time / 60);
+  const hours = time - minutes * 60;
+  console.log(hours, minutes);
+
 
   // 🔥 This can also be done in a single .reduce(), but we're practicing arrow functions here, so chain them!
 
