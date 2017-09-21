@@ -6,18 +6,38 @@
 </head>
 <body>
   <script>
-  const user = {
-    firstName: "Julien",
-    lastName: "Da silva",
-    age: "31",
-    city: "Paris"
-  }
   
   // destructuring the user object to retrieve variables with correspondant values.
   // renaming firstName to first & lastName to last
-  const { firstName:first, lastName:last, age, city } = user;
+    const user = {
+      firstName: "Julien",
+      lastName: "Da silva",
+      age: "31",
+      city: "Paris"
+    }
 
+  const { firstName:first, lastName:last, age, city } = user;
   console.log(first, last, age, city);
+
+  // workds also with arrays
+  const details = ["Llano", "guitar", "post-rock"];
+  const [name, instrument, style] = details;
+  console.log(name, instrument, style);
+
+  // rest operator
+  const team = ["Julien", "Dimitri", "Pj", "Pierrick"];
+  const [ captain, assistant, ...players ] = team;
+  console.log(captain, assistant, players);
+
+  // swaping variables
+  let inRing = "Hulk Hogan";
+  let onSide = "The Rock";
+  
+  console.log(inRing, onSide);
+  [inRing, onSide] = [ onSide, inRing]
+  console.log(inRing, onSide);
+  
+
   </script>
 </body>
 </html>
